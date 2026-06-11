@@ -3,7 +3,7 @@
 > A curated toolkit of production-tested codemods for common frontend migrations.
 
 ## Status
-✅ 6 codemods · 46 tests · [npm](https://www.npmjs.com/package/frontend-migration-kit)
+✅ 6 codemods · 46 tests · npm publish pending
 
 ## What it is
 
