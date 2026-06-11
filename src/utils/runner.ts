@@ -1,8 +1,5 @@
-import { run as jscodeshift } from 'jscodeshift/src/Runner.js';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
+import { run as jscodeshiftRun } from 'jscodeshift/src/Runner.js';
+import { join } from 'path';
 
 export interface RunOptions {
   name: string;
@@ -26,17 +23,18 @@ export async function runCodemod(options: RunOptions): Promise<RunResult> {
     'transform.js',
   );
 
-  const result = await jscodeshift(transformPath, [options.targetPath], {
+  const result = await jscodeshiftRun(transformPath, [options.targetPath], {
     dry: options.dry,
     extensions: options.extensions.join(','),
+    parser: 'tsx',
     ignorePattern: ['**/node_modules/**', '**/dist/**'],
     verbose: 0,
     runInBand: false,
-  });
+  }) as { ok: number; error: number; nochange: number };
 
   return {
-    processed: result.stats?.total ?? 0,
-    changed: result.stats?.ok ?? 0,
-    errors: result.stats?.error ?? 0,
+    processed: (result.ok ?? 0) + (result.nochange ?? 0) + (result.error ?? 0),
+    changed: result.ok ?? 0,
+    errors: result.error ?? 0,
   };
 }

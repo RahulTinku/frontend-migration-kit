@@ -2,7 +2,6 @@
   "name": "frontend-migration-kit",
   "version": "0.1.0",
   "description": "A curated toolkit of production-tested codemods for common frontend migrations",
-  "type": "module",
   "bin": {
     "migrate": "dist/cli.js"
   },
