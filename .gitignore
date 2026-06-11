@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.js.map
+.env
+.DS_Store
+# Lock file contains internal registry URLs when installed on Walmart network
+package-lock.json
+# Internal AI assistant config — contains Walmart tooling references, never commit to public repos
+AGENTS.md

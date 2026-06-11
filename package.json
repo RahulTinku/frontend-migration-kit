@@ -1,0 +1,61 @@
+{
+  "name": "frontend-migration-kit",
+  "version": "0.1.0",
+  "description": "A curated toolkit of production-tested codemods for common frontend migrations",
+  "type": "module",
+  "bin": {
+    "migrate": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "start": "node dist/cli.js",
+    "test": "vitest",
+    "test:run": "vitest run"
+  },
+  "keywords": [
+    "codemod",
+    "jscodeshift",
+    "react",
+    "migration",
+    "typescript",
+    "ast",
+    "codemods",
+    "refactoring"
+  ],
+  "author": "Rahul Kumar <https://github.com/RahulTinku>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RahulTinku/frontend-migration-kit.git"
+  },
+  "homepage": "https://github.com/RahulTinku/frontend-migration-kit#readme",
+  "bugs": {
+    "url": "https://github.com/RahulTinku/frontend-migration-kit/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "jscodeshift": "^0.16.0"
+  },
+  "devDependencies": {
+    "@types/jscodeshift": "^0.11.11",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  }
+}
