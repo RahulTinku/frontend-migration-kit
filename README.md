@@ -13,12 +13,12 @@ An open-source package + CLI of battle-tested jscodeshift codemods for common fr
 
 | Codemod | What it does |
 |---------|-------------|
-| `react-class-to-hooks` | React class components → functional components with hooks |
-| `cjs-to-esm` | CommonJS `require` → ESM `import`/`export` |
-| `prop-types-to-ts` | Prop-types → TypeScript interfaces |
-| `deprecated-react-apis` | Lifecycle methods, StrictMode compatibility fixes |
-| `react-router-v5-to-v6` | React Router v5 → v6 API changes |
-| `enzyme-to-rtl` | Enzyme → React Testing Library |
+| `react-class-to-hooks` | Converts React class components to functional components with `useState` and `useEffect` |
+| `cjs-to-esm` | Converts `require()`/`module.exports` to ES module `import`/`export` syntax |
+| `prop-types-to-ts` | Removes `prop-types` declarations and generates equivalent TypeScript interfaces |
+| `deprecated-react-apis` | Renames deprecated lifecycle methods (`componentWillMount` etc.) to their `UNSAFE_` equivalents |
+| `react-router-v5-to-v6` | Migrates `Switch`→`Routes`, `Redirect`→`Navigate`, `useHistory`→`useNavigate`, and removes `exact` |
+| `enzyme-to-rtl` | Replaces Enzyme imports and `shallow`/`mount` calls with `@testing-library/react` equivalents |
 
 ## Install
 
